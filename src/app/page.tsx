@@ -12,7 +12,27 @@ export default function Home() {
   const [clipURL, setClipURL] = useState<string>('')
   const serverURL = 'https://chatbot-server.up.railway.app/'
   // const serverURL = 'http://localhost:3001/'
-  
+  const tags = [
+    'Classic',
+    'Deez Nuts',
+    'Seal Moment',
+    'LiMau5',
+    'LTG',
+    'StopBigJ',
+    'Emmy',
+    '15',
+    'CLM',
+    'Clucky',
+    'Loud',
+    'Jumpscare',
+    'DemCowboys',
+    'Lamonting',
+    'Weirdo',
+    'Old Erobb',
+    'Lemon',
+    'Gameplay Highlight'
+  ]
+
   useEffect(() => {
     async function getClip() { await fetchClip() }
     getClip()
@@ -51,6 +71,25 @@ export default function Home() {
       console.log(res)
     }
   }
+  const updateTags = async (tags: string[]) => {
+    if(!clip) return
+    setClip({...clip, tags: tags})
+    const res = await fetch(serverURL+'linkUpdateTags', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: clip._id,
+        tags: tags
+      })
+    })
+    if(res.ok) console.log('success')
+    else {
+      alert('Failed to Update Tag')
+      console.log(res)
+    }
+  }
   const deleteClip = async () => {
     if(!clip) return
     const res = await fetch(serverURL+'linkDelete', {
@@ -69,7 +108,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center gap-10 p-24">
       {clip && 
         <>
-          <iframe src={clipURL}  height="378" width="620"/>
+          <iframe src={clipURL}  height="378" width="620" allowFullScreen/>
           <div className='flex flex-col items-center'>
             <h2 className='text-2xl text-blue-600 underline font-bold'>
               <a href={clip.url} target='__blank'>{clip.url}</a>
@@ -88,6 +127,16 @@ export default function Home() {
               <button onClick={fetchClip} className='bg-white text-black font-bold py-2 px-4 rounded'>
                 Skip
               </button>
+            </div>
+            <h2 className='text-2xl font-bold mb-2'>Tags</h2>
+            <div className='grid grid-cols-3 gap-3'>
+              {tags.map((tag, i) => (
+                <button key={i} className={`${clip.tags && clip.tags.includes(tag) ? 'bg-blue-600':'bg-gray-600'} hover:outline font-bold py-2 px-4 rounded`}
+                  onClick={() => updateTags(clip.tags && clip.tags.includes(tag) ? clip.tags.filter(t => t !== tag) : [...(clip.tags || []), tag])}
+                >
+                  {tag}
+                </button>
+              ))}
             </div>
           </div>
         </>
