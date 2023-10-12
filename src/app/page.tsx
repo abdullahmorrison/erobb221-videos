@@ -5,6 +5,7 @@ interface Clip {
   _id: string
   url: string
   safetyStatus: "safe"|"unsafe"|"unknown"
+  tags: string[]
 }
 export default function Home() {
   const [clip, setClip] = useState<Clip>()
@@ -69,21 +70,25 @@ export default function Home() {
       {clip && 
         <>
           <iframe src={clipURL}  height="378" width="620"/>
-          <h2>{clip.url}</h2>
-          <h2>id: {clip._id}</h2>
-          <div className='flex gap-10'>
-            <button onClick={()=>labelClip('safe')} className="bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded">
-              Safe
-            </button>
-            <button onClick={()=>labelClip('unsafe')} className='bg-red-500 hover:bg-red-700 font-bold py-2 px-4 rounded'>
-              Unsafe
-            </button>
-            <button onClick={deleteClip} className='bg-gray-600 hover:bg-red-700 font-bold py-2 px-4 rounded'>
-              Delete
-            </button>
-            <button onClick={fetchClip} className='bg-white hover:bg-white-700 text-black font-bold py-2 px-4 rounded'>
-              Skip
-            </button>
+          <div className='flex flex-col items-center'>
+            <h2 className='text-2xl text-blue-600 underline font-bold'>
+              <a href={clip.url} target='__blank'>{clip.url}</a>
+            </h2>
+            <h2 className='mb-10'>Id: {clip._id}</h2>
+            <div className='flex gap-10 mb-10'>
+              <button onClick={()=>labelClip('safe')} className="bg-green-500 hover:bg-green-700 font-bold py-2 px-4 rounded">
+                Safe
+              </button>
+              <button onClick={()=>labelClip('unsafe')} className='bg-red-500 hover:bg-red-700 font-bold py-2 px-4 rounded'>
+                Unsafe
+              </button>
+              <button onClick={deleteClip} className='bg-gray-600 hover:bg-gray-700 font-bold py-2 px-4 rounded'>
+                Delete
+              </button>
+              <button onClick={fetchClip} className='bg-white text-black font-bold py-2 px-4 rounded'>
+                Skip
+              </button>
+            </div>
           </div>
         </>
       }
