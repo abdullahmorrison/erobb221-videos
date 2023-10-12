@@ -20,6 +20,9 @@ export default function Home() {
   useEffect(() => {
     if(clip?.url.includes('streamable')){
       setClipURL(clip.url.replace('streamable.com', 'streamable.com/e/')+'?loop=0')
+    }else if(clip?.url.includes('twitch')){
+      const newURL = clip.url.replace('twitch.tv', 'twitch.tv/embed')+'&parent=https://main--erobb221clips.netlify.app/'
+      setClipURL(newURL)
     }
     console.log(clip)
   }, [clip])
