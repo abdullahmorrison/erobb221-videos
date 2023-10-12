@@ -30,7 +30,8 @@ export default function Home() {
     'Weirdo',
     'Old Erobb',
     'Lemon',
-    'Gameplay Highlight'
+    'Gameplay Highlight',
+    'Personal Use'
   ]
 
   useEffect(() => {
