@@ -78,6 +78,9 @@ export default function Home() {
             <button onClick={deleteClip} className='bg-gray-600 hover:bg-red-700 font-bold py-2 px-4 rounded'>
               Delete
             </button>
+            <button onClick={fetchClip} className='bg-white hover:bg-white-700 text-black font-bold py-2 px-4 rounded'>
+              Skip
+            </button>
           </div>
         </>
       }
