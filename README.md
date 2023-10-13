@@ -23,6 +23,7 @@ Tags are used to describe the clip. They are listed below.
 -    Weirdo (sexual to women)
 -    Old Erobb
 -    Lemon (Loser)
+-    Regret (Degenerate behavior)
 -    Gameplay Highlight
 -    Old Erobb
 -    Personal Use (For Abdullah to Remember)
