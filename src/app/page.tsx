@@ -110,9 +110,6 @@ export default function Home() {
       {clip && 
         <>
           <iframe src={clipURL}  height="500" width="800" allowFullScreen/>
-          <iframe src="https://youtube.com/clip/UgkxHa8_WGvlmhEGihMyRl7WQYRlI5LwtEMA?si=GvAlPnfaK4aE4Lmi"  height="500" width="800" allowFullScreen/>
-          <iframe src="https://www.youtube.com/embed/W6t_5NC7djs?si=GZJ2L_16VKlOVAWu&amp;clip=UgkxHa8_WGvlmhEGihMyRl7WQYRlI5LwtEMA&amp;clipt=EKDmhQUYsbuGBQ"  height="500" width="800" allowFullScreen/>
-          
           <div className='flex flex-col items-center'>
             <h2 className='text-2xl text-blue-600 underline font-bold'>
               <a href={clip.url} target='__blank'>{clip.url}</a>
