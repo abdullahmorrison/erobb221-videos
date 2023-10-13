@@ -108,7 +108,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center gap-10 p-24">
       {clip && 
         <>
-          <iframe src={clipURL}  height="378" width="620" allowFullScreen/>
+          <iframe src={clipURL}  height="500" width="800" allowFullScreen/>
           <div className='flex flex-col items-center'>
             <h2 className='text-2xl text-blue-600 underline font-bold'>
               <a href={clip.url} target='__blank'>{clip.url}</a>
