@@ -43,10 +43,9 @@ export default function Home() {
     if(clip?.url.includes('streamable')){
       setClipURL(clip.url.replace('streamable.com', 'streamable.com/e/')+'?loop=0')
     }else if(clip?.url.includes('twitch')){
-      const newURL = clip.url.replace('twitch.tv', 'twitch.tv/embed?clip=')+'&parent=main--erobb221clips.netlify.app'
+      const newURL = clip.url.replace('twitch.tv/', 'twitch.tv/embed?clip=')+'&parent=main--erobb221clips.netlify.app'
       setClipURL(newURL)
     }
-    console.log(clip)
   }, [clip])
   
   const fetchClip= async () => {
