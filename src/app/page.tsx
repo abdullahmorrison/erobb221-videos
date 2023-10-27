@@ -33,7 +33,7 @@ export default function Home() {
     'Regret',
     'Gameplay Highlight',
     'Personal Use',
-    'WonkeyCry',
+    'WonkyCry',
     'Animal Sound'
   ]
 
