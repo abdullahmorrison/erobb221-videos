@@ -32,7 +32,9 @@ export default function Home() {
     'Lemon',
     'Regret',
     'Gameplay Highlight',
-    'Personal Use'
+    'Personal Use',
+    'WonkeyCry',
+    'Grown Ass Man'
   ]
 
   useEffect(() => {
