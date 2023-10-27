@@ -34,7 +34,7 @@ export default function Home() {
     'Gameplay Highlight',
     'Personal Use',
     'WonkeyCry',
-    'Grown Ass Man'
+    'Animal Sound'
   ]
 
   useEffect(() => {
