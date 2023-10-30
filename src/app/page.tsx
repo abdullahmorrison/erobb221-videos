@@ -34,6 +34,7 @@ export default function Home() {
     'Gameplay Highlight',
     'Personal Use',
     'WonkyCry',
+    'Ogre',
     'Animal Sound'
   ]
 
