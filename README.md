@@ -26,6 +26,8 @@ Tags are used to describe the clip. They are listed below.
 -    Regret (Degenerate behavior)
 -    Gameplay Highlight
 -    Old Erobb
--    Personal Use (For Abdullah to Remember)
 -    WonkyCry
 -    Animal Sound
+-    emoney7 (pro erobb clip)
+-    emoneyBased (based clip)
+-    Personal Use (For Abdullah to Remember)
