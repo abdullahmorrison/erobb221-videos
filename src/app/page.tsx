@@ -37,6 +37,7 @@ export default function Home() {
     'Animal Sound',
     'emoneyBased',
     'emoney7',
+    'sports',
     'Personal Use'
   ]
 
