@@ -14,6 +14,8 @@ export default function Home() {
   // const serverURL = 'http://localhost:3001/'
   const tags = [
     'Classic',
+    'LMAOOOOOOOOOO',
+    'YouTube Clip',
     'Deez Nuts',
     'Seal Moment',
     'LiMau5',

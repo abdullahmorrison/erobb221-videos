@@ -7,6 +7,8 @@ This project shows clips that have been linked into erobb221's chat since 2021.
 Tags are used to describe the clip. They are listed below.
 
 -    Classic
+-    LMAOOOOOOOOOO (Funny)
+-    YouTube Clip (Clips to upload to a potential YouTube channel)
 -    Deez Nuts
 -    Seal Moment (voice crack)
 -    LiMau5 (high pitched voice)
