@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react'
+import tags from '../assets/tags.json'
 
 interface Clip {
   _id: string
@@ -12,36 +13,6 @@ export default function Admin() {
   const [clipURL, setClipURL] = useState<string>('')
   const serverURL = 'https://chatbot-server.up.railway.app/'
   // const serverURL = 'http://localhost:3001/'
-  const tags = [
-    'Classic',
-    'LMAOOOOOOOOOO',
-    'YouTube Clip',
-    'Deez Nuts',
-    'Seal Moment',
-    'LiMau5',
-    'LTG',
-    'StopBigJ',
-    'Emmy',
-    '15',
-    'CLM',
-    'Clucky',
-    'Loud',
-    'Jumpscare',
-    'DemCowboys',
-    'Lamonting',
-    'Weirdo',
-    'Old Erobb',
-    'Lemon',
-    'Regret',
-    'Gameplay Highlight',
-    'WonkyCry',
-    'Ogre',
-    'Animal Sound',
-    'emoneyBased',
-    'emoney7',
-    'sports',
-    'Personal Use'
-  ]
 
   useEffect(() => {
     async function getClip() { await fetchClip() }
@@ -62,6 +33,7 @@ export default function Admin() {
     const newClip = await res.json()
     setClip(newClip.result.data)
   }
+
   const labelClip = async (label: "safe"|"unsafe") => {
     if(!clip) return
     const res = await fetch(serverURL+'linkUpdateSafetyStatus', {
@@ -80,6 +52,7 @@ export default function Admin() {
       console.log(res)
     }
   }
+
   const updateTags = async (tags: string[]) => {
     if(!clip) return
     setClip({...clip, tags: tags})
@@ -99,6 +72,7 @@ export default function Admin() {
       console.log(res)
     }
   }
+
   const deleteClip = async () => {
     if(!clip) return
     const res = await fetch(serverURL+'linkDelete', {
